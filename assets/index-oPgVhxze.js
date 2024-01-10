@@ -562,8 +562,10 @@ Error generating stack: `+s.message+`
 
         >h1 {
             position: absolute;
-            top: -4rem;
-            left: -4rem;
+            top: -7rem;
+            left: -5rem;
+
+            font-size: 6.4rem;
 
             color: ${({theme:t})=>t.COLORS.COLOR_INNER};
 
@@ -571,11 +573,11 @@ Error generating stack: `+s.message+`
         }
 
         >.stars {
-            max-width: 4.2rem;
+            max-width: 6rem;
 
             position: absolute;
-            top: -7em;
-            right: 1rem;
+            top: -10rem;
+            right: 5rem;
         }
     }
 
@@ -631,6 +633,21 @@ Error generating stack: `+s.message+`
 
         .profile {
             max-width: 15rem;
+
+            >h1 {
+            top: -4.5rem;
+            left: -4rem;
+
+            font-size: 4rem;
+        }
+
+        >.stars {
+            max-width: 4rem;
+
+            position: absolute;
+            top: -7.5rem;
+            right: 1rem;
+        }
         }
 
         .one.visible{
@@ -732,7 +749,7 @@ Error generating stack: `+s.message+`
     }
 
     .flex {
-      top: 0;
+      top: 35%;
 
       .feedbackpic {
         width: 41rem;
