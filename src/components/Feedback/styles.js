@@ -44,7 +44,9 @@ export const Container = styled.div`
 
   .flex {
     position: relative;
-    top: 20%;
+    top: 50%;
+    transform: translateY(-70%);
+
 
     .feedbackpic {
       width: 29rem;
@@ -67,7 +69,7 @@ export const Container = styled.div`
     justify-content: center;
     gap: 1.5rem;
     color: ${({ theme }) => theme.COLORS.COLOR_INNER};
-
+    padding-bottom: 3rem;
     img {
       max-width: 1.7rem;
       margin: auto 0;

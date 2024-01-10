@@ -1,10 +1,30 @@
+import { useEffect, useState } from 'react';
+
 import { Container } from './styles';
-import aboutMe from '../../assets/about-me.png';
+import one from '../../assets/aboutme1.png';
+import two from '../../assets/aboutme2.png';
+import three from '../../assets/aboutme3.png';
+import { useInView } from 'react-intersection-observer';
+
+import stars from '../../assets/stars.png'
 
 export function AboutMe() {
+
+  const [ ref, inView ] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+
   return (
     <Container id="sobremim">
-      <img className="profile" src={aboutMe} alt="Foto de perfil de Dant" />
+      <div ref={ref} className='profile'>
+      <h1>Sobre mim</h1><img className='stars' src={stars} />
+      <img className={`one ${inView ? 'visible' : ''}`} src={one} alt="Foto de perfil de Dant" />
+      <img className={`two ${inView ? 'visible' : ''}`} src={two} />
+      <img className={`three ${inView ? 'visible' : ''}`} src={three} />
+    </div>
+
       <div className="text">
         <p>
           Sou Dant, terapeuta holística e taróloga com anos de experiência.

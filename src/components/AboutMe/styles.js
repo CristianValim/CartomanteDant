@@ -1,4 +1,78 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const cardAnimationOne = keyframes`
+    0% {
+        animation-timing-function: ease-in;
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        animation-timing-function: tease-in;
+        transform: rotateZ(-3deg);
+    }
+`;
+
+const cardAnimationTwo = keyframes`
+    0% {
+        animation-timing-function: ease-in;
+        transform: rotateZ(0deg) translateX(0rem);
+    }
+
+    100% {
+        animation-timing-function: ease-in;
+        transform: rotateZ(-12deg) translateX(-6rem);
+    }
+`;
+
+
+const cardAnimationThree = keyframes`
+    0% {
+        animation-timing-function: ease-in;
+        transform: rotateZ(0deg) translateX(0rem);
+    }
+
+    100% {
+        animation-timing-function: ease-in;
+        transform: rotateZ(-30deg) translateX(-10rem);
+    }
+`;
+
+    const cardAnimationOneMob = keyframes`
+    0% {
+        animation-timing-function: ease-in;
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        animation-timing-function: ease-in;
+        transform: rotateZ(-2deg);
+    }
+`;
+
+const cardAnimationTwoMob = keyframes`
+    0% {
+        animation-timing-function: ease-in;
+        transform: rotateZ(0deg) translateX(0rem);
+    }
+
+    100% {
+        animation-timing-function: ease-in;
+        transform: rotateZ(-12deg) translateX(-3rem);
+    }
+`;
+
+
+const cardAnimationThreeMob = keyframes`
+    0% {
+        animation-timing-function: ease-in;
+        transform: rotateZ(0deg) translateX(0rem);
+    }
+
+    100% {
+        animation-timing-function: ease-in;
+        transform: rotateZ(-30deg) translateX(-5rem);
+    }
+`;
 
 export const Container = styled.div`
     height: 100vh;
@@ -8,8 +82,62 @@ export const Container = styled.div`
     align-items: center;
     gap: 2.3rem;
 
-    img {
-        max-width: 34.6rem;
+    .profile {
+        position: relative;
+        min-height: 30vh;
+        max-width: 30rem;
+        display: grid;
+        grid-template-areas: 'stack';
+
+        >h1 {
+            position: absolute;
+            top: -4rem;
+            left: -4rem;
+
+            color: ${({theme}) => theme.COLORS.COLOR_INNER};
+
+            transform: rotate(-13deg);
+        }
+
+        >.stars {
+            max-width: 4.2rem;
+
+            position: absolute;
+            top: -7em;
+            right: 1rem;
+        }
+    }
+
+    .profile > * {
+        grid-area: stack;
+    }
+
+    .profile > img {
+        width: 100%;
+    }
+    
+    .one {
+        z-index: 3;
+    }
+
+    .one.visible {
+        animation: ${cardAnimationOne} 1s forwards;
+    }
+
+    .two {
+        z-index: 2;
+    }
+
+    .two.visible{
+        animation: ${cardAnimationTwo} 1s forwards;
+    }
+    
+    .three {
+        z-index: 1;
+    }
+
+    .three.visible{
+        animation: ${cardAnimationThree} 1s forwards;
     }
 
     .text {
@@ -30,10 +158,20 @@ export const Container = styled.div`
         flex-direction: column;
         justify-content: center;
 
-        img {
-            max-width: 24rem;
-            position: relative;
-            left: -5%;
+        .profile {
+            max-width: 15rem;
+        }
+
+        .one.visible{
+           animation: ${cardAnimationOneMob} 1s forwards;
+        }
+        
+        .two.visible{
+            animation: ${cardAnimationTwoMob} 1s forwards;
+        }
+        
+        .three.visible{
+            animation: ${cardAnimationThreeMob} 1s forwards;
         }
     }
 `;
