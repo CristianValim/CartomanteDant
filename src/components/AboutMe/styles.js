@@ -91,8 +91,10 @@ export const Container = styled.div`
 
         >h1 {
             position: absolute;
-            top: -4rem;
-            left: -4rem;
+            top: -7rem;
+            left: -5rem;
+
+            font-size: 6.4rem;
 
             color: ${({theme}) => theme.COLORS.COLOR_INNER};
 
@@ -100,11 +102,11 @@ export const Container = styled.div`
         }
 
         >.stars {
-            max-width: 4.2rem;
+            max-width: 6rem;
 
             position: absolute;
-            top: -7em;
-            right: 1rem;
+            top: -10rem;
+            right: 5rem;
         }
     }
 
@@ -160,6 +162,21 @@ export const Container = styled.div`
 
         .profile {
             max-width: 15rem;
+
+            >h1 {
+            top: -4.5rem;
+            left: -4rem;
+
+            font-size: 4rem;
+        }
+
+        >.stars {
+            max-width: 4rem;
+
+            position: absolute;
+            top: -7.5rem;
+            right: 1rem;
+        }
         }
 
         .one.visible{

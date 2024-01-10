@@ -91,7 +91,7 @@ export const Container = styled.div`
     }
 
     .flex {
-      top: 0;
+      top: 35%;
 
       .feedbackpic {
         width: 41rem;
